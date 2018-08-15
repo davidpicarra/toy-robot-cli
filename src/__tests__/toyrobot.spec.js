@@ -24,7 +24,6 @@ describe('toyrobot.js', () => {
       instance = new ToyRobot()
     })
 
-
     describe('mod', () => {
       it('should exist', () => {
         expect(instance.mod).toBeDefined()
