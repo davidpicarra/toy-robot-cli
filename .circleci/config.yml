@@ -24,13 +24,6 @@ jobs:
           paths:
             - toy-robot-cli
 
-  build:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run: yarn build
-
   test:
     <<: *defaults
     steps:
@@ -41,12 +34,9 @@ jobs:
 
 workflows:
   version: 2
-  install-and-parallel-build-test:
+  install-and-test:
     jobs:
       - install
-      - build:
-          requires:
-            - install
       - test:
           requires:
             - install
